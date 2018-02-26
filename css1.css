@@ -1,0 +1,30 @@
+body{background-image:url(shuiguo.jpg);background-position: -15px 0px;background-repeat: no-repeat; overflow:hidden;  background-size: 1400px 800px;font-family: "Georgia";}
+div{
+	width:480px;
+	margin:auto;
+	position: relative;
+
+}
+
+p{position:absolute;top:150px;left:0px;line-height: 50px;border-style:groove ridge outset}
+ 
+p.hidden{
+
+	display: none;
+
+}
+body{position: relative;margin:0px;padding:0px;}
+ 
+
+p.show{
+	display:block;
+ 	margin:0px;
+	
+}
+ 
+
+
+ 
+#input1{position:fixed;margin-left:100px;top:0px; background-image:url(ping.png);width:50px;height:50px;value:;}
+#input2{position:fixed;margin-left:150px;top:0px;width:50px;height:50px; background-image:url(xj.png);background-repeat:no-repeat;background-position: -30px -10px;}
+#input3{position:fixed;margin-left:200px;top:0px;width:50px;height:50px;background-image:url(mg.png);background-repeat:no-repeat;background-position:0px 0px;}

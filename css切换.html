@@ -1,0 +1,151 @@
+<!DOCTYPE html>  
+<html lang="zh-CN">  
+  <head>  
+    <meta charset="utf-8">  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+  
+    <title>水果大会</title>  
+  
+    <link rel="stylesheet" href="css1.css">  
+  </head>  
+  <body>  
+  	<div>
+  		<div id="div2">
+  			 
+<input type="button"   id="input1"   >
+<input type="button" id="input2" >
+<input type="button" id="input3"  ">
+ 
+		</div>
+	<p>（学名：Malus pumila）是水果的一种，是蔷薇科苹果亚科苹果属植物，其树为落叶乔木。苹果的果实富含矿物质和维生素，是人们经常食用的水果之一。
+苹果是一种低热量食物，每100克只产生60千卡热量。苹果中营养成分可溶性大，易被人体吸收，故有“活水”之称，其有利于溶解硫元素，使皮肤润滑柔嫩 。据说“每天一苹果，医生远离我”。
+根据联合国粮农组织统计，2013年全世界的苹果产量为8082万吨，超过葡萄的7718万吨，排世界第二位（第一位是香蕉：1.067亿吨）。毫无疑问，苹果是温带水果之王。
+苹果营养丰富，味道甜美。</p>
+	
+	<p>（学名：Musa nana Lour.）芭蕉科芭蕉属植物，又指其果实。热带地区广泛栽培食用。香蕉味香、富含营养，终年可收获，在温带地区也很受重视。植株为大型草本，从根状茎发出，由叶鞘下部形成高3～6公尺(10～20尺)的假杆；叶长圆形至椭圆形，有的长达3～3.5公尺(10～11.5尺)，宽65公分(26寸)，10～20枚簇生茎顶。穗状花序下垂  ，由假杆顶端抽出，花多数，淡黄色；果序弯垂，结果10～20串，约50～150个。植株结果后枯死，由根状茎长出的吸根继续繁殖，每一根株可活多年。原产亚洲东南部：台湾、海南、广东、广西等地区均有栽培。</p>
+  
+	<p>（拉丁学名：Mangifera indica L.），芒果是一种原产印度的漆树科常绿大乔木，叶革质，互生；花小，杂性，黄色或淡黄色，成顶生的圆锥花序。核果大，压扁，长5-10厘米，宽3-4.5厘米，成熟时黄色，味甜，果核坚硬。
+芒果为著名热带水果之一，芒果果实含有糖、蛋白质、粗纤维，芒果所含有的维生素A的前体胡萝卜素成分特别高，是所有水果中少见的。其次维生素C含量也不低。矿物质、蛋白质、脂肪、糖类等，也是其主要营养成分。可制果汁、果酱、罐头、腌渍、酸辣泡菜及芒果奶粉、蜜饯等。</p>
+ </div>
+  
+         
+ <script>
+ 	 var flake = document.createElement('img');
+var input=document.getElementsByTagName("input")
+var p=document.getElementsByTagName("p")
+for(i=0;i<3;i++)
+	{ p[i].className="hidden"
+	input[i].now=i
+	input[i].onclick=function(){
+						switch(this.now){
+							 case 0: p[this.now].className="show"
+								p[this.now+1].className="hidden"
+								p[this.now+2].className="hidden"
+								flake.src="ping.png"
+								break;
+							case 1: p[this.now].className="show"
+								p[this.now+1].className="hidden"
+								p[this.now-1].className="hidden"
+								flake.src = "xj.png"
+								break;
+							case 2:
+								 p[this.now].className="show"
+								p[this.now-1].className="hidden"
+								p[this.now-2].className="hidden"
+								flake.src = "mg.png"
+								break;
+
+							}
+
+														}
+
+}
+ 
+						flake.style.position="absolute"
+            
+
+  function snow() {
+
+
+          
+
+		 
+
+
+
+
+
+
+
+
+            //获取页面的高度 相当于雪花下落结束时Y轴的位置
+            var documentHieght = window.innerHeight;
+            //获取页面的宽度，利用这个数来算出，雪花开始时left的值
+            var documentWidth = window.innerWidth ;
+
+            //定义生成一片雪花的毫秒数
+            var millisec = 90;
+            //2、设置第一个定时器，周期性定时器，每隔一段时间（millisec）生成一片雪花；
+            setInterval(function() { //页面加载之后，定时器就开始工作
+                //随机生成雪花下落 开始 时left的值，相当于开始时X轴的位置
+                var startLeft = Math.random() * documentWidth+990;
+
+                //随机生成雪花下落 结束 时left的值，相当于结束时X轴的位置
+                var endLeft = Math.random() * documentWidth;
+
+                //随机生成雪花大小
+                var flakeSize = 5 + 20 * Math.random();
+
+                //随机生成雪花下落持续时间
+                var durationTime = 4000 + 7000 * Math.random();
+
+                //随机生成雪花下落 开始 时的透明度
+                var startOpacity = 0.7 + 0.3 * Math.random();
+
+                //随机生成雪花下落 结束 时的透明度
+                var endOpacity = 0.2 + 0.2 * Math.random();
+
+                //克隆一个雪花模板
+                var cloneFlake = flake.cloneNode(true);
+   document.body.appendChild(cloneFlake);
+                //第一次修改样式，定义克隆出来的雪花的样式
+                cloneFlake.style.cssText+= `
+                		 
+                        left: 1000px;
+                        opacity: ${startOpacity};
+                       
+                        top:0px;
+                              transition:${durationTime}ms;
+                      `;
+
+                //拼接到页面中
+             
+
+                //设置第二个定时器，一次性定时器，
+                //当第一个定时器生成雪花，并在页面上渲染出来后，修改雪花的样式，让雪花动起来；
+              setTimeout(function(){
+                    //第二次修改样式
+                    cloneFlake.style.cssText+=
+                    			 `
+                                left:${endLeft}px;
+                                top:${documentHieght}px;
+                                opacity:${endOpacity};
+                            `;
+					
+                    //4、设置第三个定时器，当雪花落下后，删除雪花。
+                    setTimeout(function() {
+                        cloneFlake.remove();
+                    }, durationTime);
+             
+					},0)
+            }, millisec);
+        }
+        snow();
+ </script>
+
+
+
+
+  </body>  
+</html>  
